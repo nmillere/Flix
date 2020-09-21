@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Flix</string>
+    <string name="desc">Movie Poster</string>
 </resources>

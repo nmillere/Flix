@@ -44,7 +44,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         Movie movie = movies.get(position);
         // Bind the movie data into the VH
         holder.bind(movie);
-
     }
 
     // Return total count of items in list
@@ -68,7 +67,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         public void bind(Movie movie) {
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
-            Glide.with(context).load(movie.getPosterPath()).into(ivPoster);
+
+            Glide.with(context).load(movie.getPosterPath())
+                    .placeholder(R.drawable.hourglass)
+                    .error(R.drawable.error)
+                    .into(ivPoster);
         }
     }
 }
