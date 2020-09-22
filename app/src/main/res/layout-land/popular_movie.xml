@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/ivPoster"
-        android:layout_width="120dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -34,7 +34,7 @@
         android:layout_below="@id/tvTitle"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_toEndOf="@id/ivPoster"
         android:ellipsize="end"
         android:maxLines="6"
@@ -42,15 +42,16 @@
 
     <TextView
         android:id="@+id/tvRating"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignTop="@id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivPoster"
+        android:layout_alignBottom="@id/tvTitle"
         android:layout_alignParentEnd="true"
-        android:background="#DCDCDC"
+        android:background="#9AD556"
         android:gravity="center"
         android:maxLines="1"
         android:textColor="#000000"
-        android:textSize="25sp"
+        android:textSize="24sp"
         tools:text="7.6" />
 
 </RelativeLayout>
