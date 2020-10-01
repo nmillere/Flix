@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
+    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -25,7 +25,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_toEndOf="@id/ivPoster"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimaryLight"
         android:textSize="24sp"
         tools:text="Fast Furious" />
 
@@ -38,9 +38,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_toEndOf="@id/ivPoster"
-        android:textColor="@color/colorAccent"
         android:ellipsize="end"
         android:maxLines="6"
+        android:textColor="@color/colorPrimaryLight"
         tools:text="A spinoff" />
 
     <TextView

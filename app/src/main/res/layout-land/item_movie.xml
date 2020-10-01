@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
+    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -15,9 +14,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/desc"
         tools:desc="Movie Poster"
-        android:contentDescription="@string/desc" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -26,8 +25,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_toEndOf="@id/ivPoster"
+        android:textColor="@color/colorPrimaryLight"
         android:textSize="24sp"
-        android:textColor="@color/colorAccent"
         tools:text="Fast Furious" />
 
     <TextView
@@ -39,8 +38,8 @@
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/ivPoster"
         android:ellipsize="end"
-        android:textColor="@color/colorAccent"
         android:maxLines="8"
+        android:textColor="@color/colorPrimaryLight"
         tools:text="A spinoff" />
 
     <TextView
@@ -49,7 +48,7 @@
         android:layout_height="40dp"
         android:layout_alignTop="@id/tvTitle"
         android:layout_alignParentEnd="true"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryLight"
         android:gravity="center"
         android:maxLines="1"
         android:textColor="@color/colorPrimaryDark"
