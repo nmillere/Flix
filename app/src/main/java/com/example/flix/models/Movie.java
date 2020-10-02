@@ -61,5 +61,9 @@ public class Movie {
 
     public String getRating() { return rating; }
 
+    public String getAdult() { return adult; }
+
+    public String getRelease_date() { return release_date; }
+
     public int getMovieId() { return movieId; }
 }
