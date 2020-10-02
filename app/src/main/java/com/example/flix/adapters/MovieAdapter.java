@@ -32,7 +32,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public int getItemViewType(int position) {
-        if (Float.parseFloat(movies.get(position).getRating()) > 7) {
+        if (Float.parseFloat(movies.get(position).getRating()) >= 7) {
             return POPULAR;
         } else return NORMAL;
     }

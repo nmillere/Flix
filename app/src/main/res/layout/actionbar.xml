@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:foregroundGravity="center"
+        android:contentDescription="@string/logo"
+        app:srcCompat="@drawable/ic_baseline_movie_filter_24" />
+
+    <TextView
+        android:id="@+id/action_bar_title"
+        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/flix_playing_now"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="30sp" />
+
+
+
+</RelativeLayout>

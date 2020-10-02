@@ -18,6 +18,8 @@ import com.example.flix.models.Movie;
 
 import org.parceler.Parcels;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class ViewHolderPopular extends RecyclerView.ViewHolder {
 
     RelativeLayout container;

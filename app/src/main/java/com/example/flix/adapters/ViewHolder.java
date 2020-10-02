@@ -7,17 +7,21 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.flix.R;
+import com.example.flix.activities.MainActivity;
 import com.example.flix.activities.MovieDetailsActivity;
 import com.example.flix.models.Movie;
 
 import org.parceler.Parcels;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -65,7 +69,8 @@ public class ViewHolder extends RecyclerView.ViewHolder {
                 // 2. Navigate to a new activity on tap
                 Intent i = new Intent(context, MovieDetailsActivity.class);
                 i.putExtra("movie", Parcels.wrap(movie));
-
+//                ActivityOptionsCompat options = ActivityOptionsCompat.
+//                        makeSceneTransitionAnimation(MainActivity.this, (View)tvOverview, "overview");
                 context.startActivity(i);
             }
         });

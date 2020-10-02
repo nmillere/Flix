@@ -7,6 +7,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.RatingBar;
@@ -43,7 +44,7 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
         ratingBar = findViewById(R.id.ratingBar);
         youTubePlayerView = findViewById(R.id.player);
 
-        Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
+        final Movie movie = Parcels.unwrap(getIntent().getParcelableExtra("movie"));
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         ratingBar.setRating(Float.parseFloat(movie.getRating()));
@@ -59,7 +60,8 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
                     }
                     String youtubeKey = results.getJSONObject(0).getString("key");
                     Log.d("MovieDetailsActivity", youtubeKey);
-                    initializeYoutube(youtubeKey);
+
+                    initializeYoutube(youtubeKey, Float.parseFloat(movie.getRating()));
 
                 } catch (JSONException e) {
                     Log.e("MovieDetailsActivity", "Failed to parse JSON");
@@ -74,13 +76,18 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
         });
     }
 
-    private void initializeYoutube(final String youtubeKey) {
+    private void initializeYoutube(final String youtubeKey, final Float rating) {
         youTubePlayerView.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("MovieDetailsActivity", "onInitializationSuccess");
-                // do any work here to cue video, play video, etc.
-                youTubePlayer.cueVideo(youtubeKey);
+                // do any work here to cue video, play video, etc
+                if (rating >= 7) {
+                    youTubePlayer.loadVideo(youtubeKey);
+                }
+                else {
+                    youTubePlayer.cueVideo(youtubeKey);
+                }
             }
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {

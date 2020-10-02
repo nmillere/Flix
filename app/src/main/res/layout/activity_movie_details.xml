@@ -1,48 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical"
-    tools:context=".activities.MovieDetailsActivity">
-
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/player"
-        android:layout_width="match_parent"
-        android:layout_height="250dp" />
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:textColor="@color/colorPrimaryLight"
-        android:textSize="30sp"
-        tools:text="It Chapter Two" />
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        style="@style/Widget.AppCompat.RatingBar.Indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:clickable="false"
-        android:numStars="10"
-        android:progressTint="@color/colorPrimaryLight"
-        android:rating="8.5" />
-
-    <TextView
-        android:id="@+id/tvOverview"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:textColor="@color/colorPrimaryLight"
-        tools:text="Sample Overview" />
-</LinearLayout>
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        tools:context=".activities.MovieDetailsActivity">
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:transitionName="title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="30sp"
+            tools:text="It Chapter Two" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:clickable="false"
+            android:numStars="10"
+            android:progressTint="@color/colorPrimaryLight"
+            android:rating="8.5" />
+
+        <TextView
+            android:id="@+id/tvOverview"
+            android:transitionName="overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/colorPrimaryLight"
+            tools:text="Sample Overview" />
+    </LinearLayout>
+</ScrollView>
