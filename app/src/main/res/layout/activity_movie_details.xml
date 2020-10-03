@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/colorPrimary">
     <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -19,14 +19,15 @@
 
         <TextView
             android:id="@+id/tvTitle"
-            android:transitionName="title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
+            android:gravity="center"
             android:textColor="@color/colorPrimaryLight"
             android:textSize="30sp"
+            android:transitionName="title"
             tools:text="It Chapter Two" />
 
         <RatingBar
@@ -37,6 +38,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
+            android:layout_gravity=""
             android:clickable="false"
             android:numStars="10"
             android:progressTint="@color/colorPrimaryLight"
@@ -50,7 +52,28 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
+            android:textSize="18sp"
             android:textColor="@color/colorPrimaryLight"
             tools:text="Sample Overview" />
+
+        <TextView
+            android:id="@+id/tvRelease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/release_date"
+            android:textColor="@color/colorPrimaryLight" />
+
+        <TextView
+            android:id="@+id/tvGenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/movie_genres"
+            android:textColor="@color/colorPrimaryLight" />
     </LinearLayout>
 </ScrollView>

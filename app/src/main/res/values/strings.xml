@@ -3,4 +3,7 @@
     <string name="desc">Movie Poster</string>
     <string name="logo">logo</string>
     <string name="flix_playing_now">Playing Now</string>
+    <string name="release_date">Release date</string>
+    <string name="movie_genres">Movie genres</string>
+    <string name="adult_rating">Adult rating</string>
 </resources>

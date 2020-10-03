@@ -9,19 +9,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.flix.R;
-import com.example.flix.activities.MainActivity;
 import com.example.flix.activities.MovieDetailsActivity;
 import com.example.flix.models.Movie;
 
 import org.parceler.Parcels;
-
-import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
