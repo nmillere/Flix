@@ -1,14 +1,16 @@
 package com.example.flix.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -17,8 +19,6 @@ import com.example.flix.activities.MovieDetailsActivity;
 import com.example.flix.models.Movie;
 
 import org.parceler.Parcels;
-
-import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class ViewHolderPopular extends RecyclerView.ViewHolder {
 
@@ -61,8 +61,11 @@ public class ViewHolderPopular extends RecyclerView.ViewHolder {
                 // 2. Navigate to a new activity on tap
                 Intent i = new Intent(context, MovieDetailsActivity.class);
                 i.putExtra("movie", Parcels.wrap(movie));
-
-                context.startActivity(i);
+                Pair<View, String> p1 = Pair.create((View)tvOverview, "overview");
+                Pair<View, String> p2 = Pair.create((View)tvTitle, "title");
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation((Activity) context, p1, p2);
+                context.startActivity(i, options.toBundle());
             }
         });
     }
