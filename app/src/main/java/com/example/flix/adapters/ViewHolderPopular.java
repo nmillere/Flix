@@ -14,6 +14,7 @@ import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.flix.R;
 import com.example.flix.activities.MovieDetailsActivity;
 import com.example.flix.models.Movie;
@@ -50,6 +51,7 @@ public class ViewHolderPopular extends RecyclerView.ViewHolder {
         // else imageUrl = poster image
 
         Glide.with(context).load(imageUrl)
+                .transform(new RoundedCorners(30))
                 .placeholder(R.drawable.hourglass)
                 .error(R.drawable.error)
                 .into(ivPoster);
