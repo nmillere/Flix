@@ -94,12 +94,7 @@ public class MovieDetailsActivity extends YouTubeBaseActivity {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d(TAG, "onInitializationSuccess");
                 // do any work here to cue video, play video, etc
-                if (rating >= 7) {
-                    youTubePlayer.loadVideo(youtubeKey);
-                }
-                else {
-                    youTubePlayer.cueVideo(youtubeKey);
-                }
+                youTubePlayer.cueVideo(youtubeKey);
             }
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_marginLeft="5dp"
@@ -64,5 +65,14 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="25sp"
         tools:text="7.6" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/ic_baseline_play_circle_outline_24" />
 
 </RelativeLayout>

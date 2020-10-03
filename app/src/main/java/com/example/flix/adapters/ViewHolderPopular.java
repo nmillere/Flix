@@ -3,6 +3,7 @@ package com.example.flix.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -15,11 +16,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.codepath.asynchttpclient.AsyncHttpClient;
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flix.R;
 import com.example.flix.activities.MovieDetailsActivity;
+import com.example.flix.activities.MoviePopularActivity;
 import com.example.flix.models.Movie;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.parceler.Parcels;
+
+import java.util.Locale;
+
+import okhttp3.Headers;
 
 public class ViewHolderPopular extends RecyclerView.ViewHolder {
 
@@ -57,6 +69,15 @@ public class ViewHolderPopular extends RecyclerView.ViewHolder {
                 .into(ivPoster);
 
         // 1. Register click listener on the whole row
+        ivPoster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, MoviePopularActivity.class);
+                i.putExtra("movie", Parcels.wrap(movie));
+                context.startActivity(i);
+            }
+        });
+
         container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,3 +93,4 @@ public class ViewHolderPopular extends RecyclerView.ViewHolder {
         });
     }
 }
+
