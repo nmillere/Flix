@@ -12,9 +12,9 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 #### BONUS
 - [ ] Implement a shared element transition when user clicks into the details of a movie (1 point).
-- [ ] Trailers for popular movies are played automatically when the movie is selected (1 point).
-  - [ ] When clicking on a popular movie (i.e. a movie voted for more than 5 stars) the video should be played immediately.
-  - [ ] Less popular videos rely on the detailed page should show an image preview that can initiate playing a YouTube video.
+- [x] Trailers for popular movies are played automatically when the movie is selected (1 point).
+  - [x] When clicking on a popular movie (i.e. a movie voted for more than 5 stars) the video should be played immediately.
+  - [x] Less popular videos rely on the detailed page should show an image preview that can initiate playing a YouTube video.
 - [ ] Add a play icon overlay to popular movies to indicate that the movie can be played (1 point).
 - [ ] Apply the popular ButterKnife annotation library to reduce view boilerplate. (1 point)
 - [ ] Add a rounded corners for the images using the Glide transformations. (1 point)
@@ -24,6 +24,11 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 <img src='walkthrough-part2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+### Notes (Part 2)
+I ran into issues when I was attempting to use the Genre API to list the genres rather than the genre ids of the movie. What I learned was that I needed to not put code after the client get method, because there ends up being a race condition and the variables kept being null. After I put the code that needed the genres within the client method I didn't have any issues. I got stuck on this for a while.
+
+Having multiple viewholders made some of the stretch goals more difficult to accomplish.
 
 ## Flix Part 1
 
